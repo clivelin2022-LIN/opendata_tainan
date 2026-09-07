@@ -169,7 +169,7 @@ def read_from_mysql():
     try:
         db_uri = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}?charset={DB_CHARSET}" 
         engine = create_engine(db_uri)
-        df = pd.read_sql_table("tainan_house", con=engine)
+        df = pd.read_sql_table("house", con=engine)
         logging.info(f"已成功讀取mysql table資料,共{len(df)}筆資料")
         return df
     except Exception as e:
